@@ -4,6 +4,12 @@
  background:#214a87;
 }
 
+.Brectangle{
+width:100%;
+height: 300px;
+background:#A2ACBA;
+}
+
 ul {
  list-style-type: none;
  margin: 0;
