@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<!--https://www.mathjax.org/#gettingstarted -->
+<head>
+ <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>Ashley Hendrickon, Math 312 portfolio</title>
+<script type="text/javascript" async
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async>
+</script>
+<style>
+
+</style>
+
+<center><h1>Math 312 Portfolio</h1><font size="3">
+				 Ashley Hendrickson<br />
+				C.Wells<br /><br />
+				Winter 2019</center></font><br />
+
+</head>
+<body>
+<p>
+<b>Contents<br /><br />
+	I &nbsp; Discussions of Course Grade <span style="float:right">  <a href="#gradeD" >1</a> </span><br /><br />
+	II &nbsp; Supporting Evidence <span style="float:right"><a href="#gradeD" >1</a></span><br /><br />
+	III &nbsp; In-Class Assessments <span style="float:right"><a href="#Ass1" >2</a></span><br /><br /></b>
+		    &emsp; &emsp; Assessment 1 <br />
+		    &emsp; &emsp; Assessment 2 <br /><br />
+	<b>IV &nbsp; Class Activities <span style="float:right">1</span><br /><br /></b></p><p>
+	<b>IV &nbsp; Class Activites <span style="float:right">1</span><br><br></b>
+	<b>V &nbsp; Essays</b> <br>
+		&emsp;&emsp; Essay 1: Who are you and what do you like <span style="float:right"><a href ="#who-are-you">3</a></span></p><br>
+		
+	<p><b>V &nbsp; Outside research <span style="float:right"><a href="#diffi1" >4</a> </span><br /><br /></b>
+			&emsp; &emsp; Diffie-Hellman Key exchange <br /><br /></p>
+	<hr>
+	<b><h1><p id="gradeD"> Grade Discussion </p></h1></b>
+	<p> This course as encouraged me to in engage in my own independent research and analyze modern day cryptography that are of interest to me.  
+	There are a lot of things I have learned about the discrete logarithm problem, Euler's totient function, RSA encryption and the Diffie-Hellman 
+	key exchange protocol. I have learned some history of cryptography through reading the code book. I have analyze the in class assessments in 
+	depth learning and describing by mistakes, I also went over the problems I didn't complete as well.  I believe with my understanding of the class 
+	activities, in-class assessments and my own independent research of RSA all together merits an A. 
+</p>
+	<hr>
+	<b><h1><p id="Ass1"> In-class Assessments</p></h1></b>
+<p>
+	<img src="images/1.jpeg" width=45% > 	<img src="images/2.jpeg" width=45% ><br />
+	<br>
+	<h3><p>Overview of Assessment 1</p></h3>
+	<br><p>
+		In general I felt comfortable with the material on this Assessment I feel very comfortable modular arithmetic. 
+
+		
+	<b>Problem 1</b> To solve the following problems I used the general technique
+	\((88+67)\bmod 7= 88+67-7\cdot \text{floor}\left(\frac{88+67}{7}\right)=1\)<br />
+	part c is wrong because 13 and 67 were flipped when doing the calculations so the result was positive the correct answer should be
+	\((13-67)\bmod 7= 13-67-7\cdot \text{floor}\left(\frac{13-67}{7}\right)=2\)
+	<br />
+	<br />
+	<b>Problem 2</b> This problem was all about base conversions.
+Its possible to convert between any two base but for most people the highest base used to convert numbers to is base 16 and the lowest is base 2 so that will be our focus.
+The big reason for converting from base 10 to base 2 is to be able to talk to computers easier,
+computers compute in base 2 so its important to be able to convert to base 2. Below is
+the general algorithm that can be used to convert between any two bases to base 10. 
+
+  $$ \sum_{i=0}^{n} d_i(N^{i})=\text{(base N repersentation)}$$
+</p>
+<p>	Enter a base then the number for example 2 &nbsp; 100 = 4<br>
+	<input type="text" id="fname" name="firstname" placeholder="Base then number" method="post">
+	<script src="action.js"></script>
+	<button onclick="myFunction()">Try it</button>
+	<p id="print"></p><br />
+<p>If you want to do the opposite or convert from base 10 to base n you have to reverse the algorithm. So solving this equation requires you to solve for the different "d"s in such a way that 
+   that the total equation is equivalent to Base repersentation. Once this has been done then combine all the
+   "d"s as you would a string and that's how you convert from base 10 to base \(N\) <br>
+    <br> Enter a base then the number for example 2 &nbsp; 100 = 1100100<br> 
+   
+   <input type="text" id="toN" name="tN" placeholder="Base then number" method="post">
+   <script src="action.js"></script>
+   <button onclick="to_Base_N()">Try it</button>
+   <p id="printbaseN"></p>
+   <br /><br />
+   <p><b>Problem 3</b>  is a simple shift where you shift the whole alphabet by x amount. 
+   The problem with part 'b' is every instance of 'j' was not shifted back by ten however the rest of 
+   the cipher was shifted back by 10. Fun fact if the cipher was shifted back by 23 the message would be 'mathematics' </p>
+   <br /> 
+   <p><button onclick="ciph()">encrypt</button>
+  Original message: <input type="text" id="message" name="ciph" placeholder="secret" method="post">
+   <span style="padding-left:50px">(<input type="text" id="shift" name="shiftAmount" placeholder="shift" method="post" size ="3" maxlength="3">+x)mod 26= <span id="encrypted"></span></span> 
+   </p>
+   <br />
+   <p><b>Problem 4</b> We are encrypting and decrypting a transposition cipher.<br />
+   First we well make a table with the secret key at the top. Then well fill in the clear text,
+   message one character per column and below the letters of the cipher.<br />
+   Message: Keepcalmandcipheron &nbsp;|  &nbsp; Key: JUNGLE
+   </p><br /><br />
+   <table style="display: inline-block;">
+   <tr><th>J</th><th>U</th><th>N</th><th>G</th><th>L</th><th>E</th></tr>
+   <tr><td>k</td><td>e</td><td>e</td><td>p</td><td>c</td><td>a</td></tr>
+   <tr><td>l</td><td>m</td><td>a</td><td>n</td><td>d</td><td>c</td></tr>
+   <tr><td>i</td><td>p</td><td>h</td><td>e</td><td>r</td><td>o</td></tr>
+   <tr><td>n</td><td></td></tr>
+   </table>
+   <table style="display: inline-block;">
+   <tr><th>E</th><th>G</th><th>J</th><th>L</th><th>N</th><th>U</th></tr>
+   <tr><td>a</td><td>p</td><td>k</td><td>c</td><td>e</td><td>e</td></tr>
+   <tr><td>c</td><td>n</td><td>l</td><td>d</td><td>a</td><td>m</td></tr>
+   <tr><td>o</td><td>e</td><td>i</td><td>r</td><td>h</td><td>p</td></tr>
+   <tr><td> </td><td> </td><td>n </td><td> </td><td> </td></tr>
+   </table><br />
+   <p> <br />
+	   we'll write the secret key in alphabetical order and transpose the columns of the message
+	</p>
+   <p>Now we have encrypted the cipher which looks like: <b> apkceecnldamoeirhp</b>
+   <br /><br /><br />
+   To do the reverse and undo the encryption we just do the opposite<br />
+   Message: cdystraesnfoseaisnniguevroeorealm &nbsp; | &nbsp; Key: JUNGLE<br />
+   First make a table with the secret key at the top in alphabetical order. Then fill in the columns with the clear text on character per column.
+   </p><br />
+   <table style="display: inline-block;">
+   <tr><th>E</th><th>G</th><th>J</th><th>L</th><th>N</th><th>U</th></tr>
+   <tr><td>c</td><td>d</td><td>y</td><td>s</td><td>t</td><td>r</td></tr>
+   <tr><td>a</td><td>e</td><td>s</td><td>n</td><td>f</td><td>o</td></tr>
+   <tr><td>s</td><td>e</td><td>a</td><td>i</td><td>s</td><td>n</td></tr>
+   <tr><td>n</td><td>i</td><td>g</td><td>u</td><td>e</td><td>v</td></tr>
+   <tr><td>r</td><td>o</td><td>e</td><td>o</td><td>r</td><td>e</td></tr>
+   <tr><td>a</td><td>l</td><td>m</td><td> </td><td> </td><td> </td></tr>
+   </table>
+
+<table style="display: inline-block;">
+   <tr><th>J</th><th>U</th><th>N</th><th>G</th><th>L</th><th>E</th></tr>
+   <tr><td>y</td><td>r</td><td>t</td><td>d</td><td>s</td><td>c</td></tr>
+   <tr><td>s</td><td>o</td><td>f</td><td>e</td><td>n</td><td>a</td></tr>
+   <tr><td>a</td><td>b</td><td>s</td><td>e</td><td>i</td><td>s</td></tr>
+   <tr><td>g</td><td>v</td><td>e</td><td>i</td><td>u</td><td>n</td></tr>
+   <tr><td>e</td><td>e</td><td>r</td><td>o</td><td>o</td><td>r</td></tr>
+   <tr><td>m</td><td> </td><td> </td><td>l</td><td> </td><td>a</td></tr>
+   </table>
+   <p> Next order the columns to spell jungle<br /></p>   
+  <p><br />The Decrypted message is: <b>yrtdscsofenaabseisgveiyneeroormla</b></p>
+   <p> <b>problem 5</b> We are encrypting and decrypting the messages with the ADFGVX cipher<br />
+	Plaintext: SPRING &nbsp; | &nbsp; KEY: BREAK</p>
+
+<table>
+   <tr><th>&nbsp;</th><th>A</th><th>D</th><th>F</th><th>G</th><th>V</th><th>X</th></tr>
+   <tr><th>A</th>	  <td>N</td><td>O</td><td>Z</td><td>S</td><td>Q</td><td>5</td></tr>
+   <tr><th>D</th>     <td>L</td><td>H</td><td>V</td><td>P</td><td>F</td><td>U</td></tr>
+   <tr><th>F</th>     <td>K</td><td>Y</td><td>4</td><td>0</td><td>E</td><td>8</td></tr>
+   <tr><th>G</th>     <td>A</td><td>W</td><td>D</td><td>X</td><td>T</td><td>7</td></tr>
+   <tr><th>V</th>     <td>M</td><td>B</td><td>6</td><td>G</td><td>2</td><td>J</td></tr>
+   <tr><th>X</th>     <td>R</td><td>I</td><td>1</td><td>3</td><td>9</td><td>C</td></tr>
+   </table>
+      <br /><br /><p>First we start with are card and match the column and the row with each character in the plaintext there should be two characters per plaintext character.
+   After this are text looks like: <i>ag dg xa xd aa vg</i>  <br />Next we will make a table with are key word at the top and are cipher text will go beneath it as one character per ciphertext 
+   character and we will also alphabetize the table for the final cipher.
+   </p>
+   
+   <table style="display: inline-block;">
+   <tr><th>B</th><th>R</th><th>E</th><th>A</th><th>K</th></tr>
+   <tr><td>a</td><td>g</td><td>d</td><td>g</td><td>x</td></tr>
+   <tr><td>a</td><td>x</td><td>d</td><td>a</td><td>a</td></tr>
+   <tr><td>v</td><td>g</td><td> </td><td> </td><td> </td></tr>
+   </table>
+   <table style="display: inline-block;">
+   <tr><th>A</th><th>B</th><th>E</th><th>K</th><th>R</th></tr>
+   <tr><td>a</td><td>a</td><td>d</td><td>x</td><td>g</td></tr>
+   <tr><td>g</td><td>a</td><td>d</td><td>a</td><td>x</td></tr>
+   <tr><td> </td><td>v</td><td> </td><td> </td><td>g</td></tr>
+   </table>
+   <p>Our cipher is text is: <b>aadxggadaxvg</b><br /><br />
+   To decipher we can just do the opposite first look at the card <br />
+   
+   Ciphertext: gadgdgxvadadfa &nbsp; | &nbsp; Key: card 
+   <br />	
+   </p>
+   <table style="display: inline-block;">
+   <tr><th>A</th><th>C</th><th>D</th><th>R</th></tr>
+   <tr><td>g</td><td>a</td><td>d</td><td>g</td></tr>
+   <tr><td>d</td><td>g</td><td>x</td><td>v</td></tr>
+   <tr><td>a</td><td>d</td><td>a</td><td>d</td></tr>
+   <tr><td>f</td><td>a</td><td> </td><td> </td></tr>
+   </table>
+   <table style="display: inline-block;">
+   <tr><th>C</th><th>A</th><th>R</th><th>D</th></tr>
+   <tr><td>a</td><td>g</td><td>g</td><td>d</td></tr>
+   <tr><td>g</td><td>d</td><td>v</td><td>x</td></tr>
+   <tr><td>d</td><td>a</td><td>d</td><td>a</td></tr>
+   <tr><td>a</td><td>f</td><td> </td><td> </td></tr>
+   </table>
+   <p>After in reading in the rows we can decipher: <i>ag gd gd vx da da af</i> using the table. The cipher is: <b>swwjllz</b></p>
+   <hr>
+   <h1><p>Essays </p><h1>  
+   <h3><p id ="who-are-you">You Are Who and What You Like </p></h3>
+   <p></p>
+   <p>  
+ When looking at all the article’s on dating apps it's surprising to see how unsecured dating apps are and how much personal information they use. 
+ The security of these apps is a huge issue and has some of the most private and cringiest moments of our lives. This sensitive data could be used for 
+ blackmailing and social engineering. If a hacker could get access to some of the data they could pose as a match, try to gain a users confidence and trick 
+ the user into sending them vulnerable information or money this is how people use social engineering to attack victims.
+ <br><br>
+ In the “Tinder’s Lack of Encryption Lets Strangers Spy on your Swipes” article somebody demonstrates how easy it is to spy on users swipes which can be done 
+ with something as simple as wireshark. This raises the question to how secure is tinder and other dating sites and what other information can be stolen. Most sites 
+ uses HTTPS because HTTP is considered not secure but not tinder which still uses HTTP according to the article. This is alarming because of the sheer amount of data 
+ tinder actually collects on individuals. Some of the most private, cringiest and intimate moments of our lives are shared on this app so it's vital that this information 
+ stay secure. 
+ <br><br>
+ Most if not all dating apps work with some AI to try to match the client with the person of their dreams and the AI works even better with the paid version. 
+ So it shouldn't come as a surpriseas to how much data dating apps actually store on you. Dating apps wanna know what kind of person you are looking for so there 
+ algorithm can try to match you up with the person of your dreams. Collecting that much data is also used for studies like what is the most attractive race or whats are the most 
+ desired features in a person. This kind of information is valuable to other researchers and advertisers. 
+ <br><br>
+ Most people don’t wanna pay for dating sites unfortunately running such a big corporation is very expensive and while most dating sites have a few ads they don't have the 
+ amount needed to run a corporation of that size. So the user is paying with there personal data that they are willing or unwilling to provide which tinder can sell to other companies. 
+ If dating apps couldn’t create revenue this way then users would be forced to pay a lot of money or there apps would be flooded with advertisements. Nothing in life is free you pay 
+ with money or with your personal data for these services. 
+ <br><br>
+ So the big issue isn’t that these sites and apps have a lot stored on us but how secure is the data and who are the buyers?  how securely do they handle our data? and what do they use if for?
+   </p><hr>
+<h1><p> Area of depth</p></h1>
+<h3><p> The Diffie-Hellman key exchange</p></h3>
+<p id = "diffi1">
+The Diffie-Hellman key exchange is key exchanged based on the RSA. It's an algorithm used to share encrypted secrets between two parties. 
+Its primarily used as a method of exchanging cryptographic keys for use in symmetric encryption. Alice is trying send a message to Bob without Eve being able to decipher Alice's message. 
+However Eve is able to intercept every message between Alice and Bob. To solve this problem Bob has a private key and Alice has a private key that they will not share with each other this 
+should be a hug number randomly generated number we can refer to this as Bob or Alice's private key. Both Alice and bob well agree to some module function that 
+can be represented in general terms as \(a(x)= b \bmod c\) both Bob and Alice will raise there private key to \(b\) generating a public key they then will share that 
+key with each other and again raise there private key to there public key that they both shared the result will be a key that they will use to encrypt and decrypt information. If Alice and 
+Bob use big enough numbers there cypher should stay secure and even tho Eve has both Alice and Bob’s public key. Eve still won’t be able to compute it without doing 
+a massive amount of trial and error guess and checking even on the best performing computers of today it could take years to crack Bob and Alice's encryption. Eve will be stuck computing the 
+discrete logarithm problem
+</p>
+<!--img src="a.png" alt="This is a test" width="70%">-->
+<p><i>An example of the Diffie-Hellman key exchange with very small numbers in practice you would use much bigger numbers</i></p>
+<div class="container">
+  <div class="box"><b><center>Alice</center></b></div>
+  <div class="box"><b><center>Eve</center></b></div>
+    <div class="box"><b><center>Bob</center></b></div>
+        <div class="box"><font color= "red"> Private Key=54</font><br /><font color ="green">Public generator \(3^{54} \bmod 17\)=15</font><br /> <font color="blue">Alice's public key 15</font><br />
+          \(16^{54} \bmod 17 = 1\)<br /> <b> The key=1</b>
+          <br /></div>
+         <div class="box"><font color ="blue"> Alice's public key 15</font><br /><font color
+			 ="green">Public generator \(3^{?}\bmod 17\)</font><br /><font color ="blue">Bob's public key = 16</font><br />\(3^{?}\bmod 17=key\)<br /> <b> The key = ?</b></div>
+          <div class="box"><font color ="red"> Private Key=24</font><br /><font color ="green">Public generator \(3^{24}\bmod 17=16\)</font><br />
+          <font color="blue">Bob's public key=16</font><br />\(15^{24} \bmod 17 =1\)<br /><b>The key=1</b></div>
+  <div style="clear:both;"></div></div>
+<p><font color=green>Note that an exponent of \(54\) is kind of pointless when working
+	<em>modulo</em> \(17\), since \(\phi(17)=16\). Thus, because \(54\bmod{16}=6\), you might as
+	well use \(3^{6}\bmod 17=15\).</font></p>
+<p>So what's the problem? This method becomes extremely hard to maintain if Alice or Bob want to talk to multiple people at once because Alice would have to manage multiple private, 
+public, module functions and encryption keys. So Alice and Bob will need a function that's easy to decrypt with a key and hard to decrypt without a key. So so far we have \(m^i \bmod n=key\) we need a way to
+decrypt 'i' to the original message. Alice sends '\(c\)' to Bob that she finds through \(m^i \bmod N
+=c\). '\(i\)' in this case stands for encrypt. Bob takes Alice's '\(c\)' and then exponentiates that to the
+\(a\) 
+decryption key. So our function will look like \(m^{id} \bmod N=m\); Therefore we need a way for Alice to construct 'i' and 'd' that makes it hard for anyone else to find 'd'. This will require a 
+second one way function that can be used to generate ‘d’. To do this we can uses prime factorization and the \(\phi\) function. Now we need to find a function which depends on knowing the prime factorization of N. 
+To do this we can use the \(\phi\) function which measures the breakability of a function. \(\phi\) calculates how many numbers are less then or equal to  \(N\) that don’t share any common numbers with N. 
+Calculating the \(\phi\) function is hard but for in one case  \(N-1\). Combining all this we can use Euler’s Theorem which is a relationship between the \(\phi\) function and modular exponentiation 
+that is \(m^{\phi(n)} \equiv 1 \bmod n\). This means that it's possible to pick any two number such that they don’t share any common factors. Combining all of this we can uses 
+$$m^{k \phi(n)+1} \equiv m \bmod n$$
+Note that now it's easy to solve for  '\(d\)' if  \(d= \frac{\phi(n)+1}{i}\) so 'd' should always be Alice's private key.  
+<br />
+Lets, see this in practice.... 
+<br /><br />
+</p>
+
+ <table  class="table1">
+   <tr class ="tr1"><th class ="th1">Alice </th><th class ="th1">Eve </th><th class = "th1">Bob </th></tr>
+   <tr class ="tr1"><td class ="tb1"> Alice first generates two large prime numbers \(p_{1}\) and \(p_{2}\) for example<br /> <font color ="red">\(p_{1}=53\) and \(p_{2}=59\) <font></td>
+	   <td class ="td.1">
+		   \begin{align*}
+		   N&= 3127 \\ 
+		   e&=3
+		   \end{align*}
+	   </td class ="td.1">
+   <td class ="tb1">Bob as a message he wants to encrypt say "hi".<br />Bob encodes this message in some sort of number pade and gets 89 </td></tr>
+   
+   <tr class ="tr1"><td class ="tb1">Alice multiplies the two primes together to get a number N <br /> \( 53\cdot 59=N\)= <font color ="blue">3127</font></td>
+   <td class ="tb1"> </td>
+   <td class ="tb1">Bob then locks his message up with Alice's lock by calculating
+   <br />\(89^3 \bmod 3127 \equiv\)<font color ="blue">139</font> </td></tr>
+  
+   <tr class ="tr1"><td class ="tb1">Alice can easy find \(\phi(N)\) <br />\(\phi(n)=(53-1)\cdot (59-1)=\)<font color ="red">3016</font></td>
+   <td class ="tb1"> </td>
+   <td class ="tb1">Bob then sends the message back to Alice <font color ="blue">1394</font> </td></tr>
+  
+   <tr class ="tr1"><td class ="tb1"> Next Alice pick some public exponent 'i' for example <font color ="blue">i=3</font><br />
+   With the condition it must be some odd number that doesn't share a factor with \(\phi(n)\)</td>
+   <td class ="tb1">1394</td>
+   <td class ="tb1"> </td></tr>
+  
+   <tr class ="tr1"><td class ="tb1"> Alice then calculates the decryption key.<br />
+   \(d=\frac{2\cdot 3016+1}{3}\)=<font color ="red">2011</font></td>
+   <td class ="tb1"> </td>
+   <td class ="tb1"> </td></tr>
+  
+  <tr class ="tr1"><td class ="tb1"> Alice can now decrypt her message using her private key 
+   \(1394^{2011} \equiv 89 \bmod 3127\) <br /><b>89</b> is Bob's message </td>
+   <td class ="tb1">  </td>
+   <td class ="tb1"> </td></tr>
+  
+  
+   
+   </table>
+    <br />
+    <p>Eve cannot calculate Bob's message with just the information Eve knows. To calculate Bob's number would require Eve to calculate the prime factorization of 1394 and 
+    if the prime number is big enough this could take years to calculate.</p>
+  
+ <br /> <br /> <br /> <br />
+</body>
+</html>
+ 
