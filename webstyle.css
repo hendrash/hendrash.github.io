@@ -7,6 +7,7 @@
 .Brectangle{
 width:100%;
 height: 300px;
+bottom: 0;
 background:#A2ACBA;
 }
 
