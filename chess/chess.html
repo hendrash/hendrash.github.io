@@ -1,0 +1,42 @@
+<html>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style> style="padding-left: 10px; padding-bottom: 20px;"</style>
+  <script src=/logic.js></script>
+  <body>
+		<header><center><h2> Real time communication</h2></center></header>
+		<title> Chess Game! </title>
+		<section>
+			<nav>
+				<div class ="col-xs-2">
+					<label for ="ex1">Enter in a link</label>
+					<input class ="form-control" id="ex1" type="text"><br>
+					<button type="button" class="btn btn-primary" id="connect" onclick="connect()">connect to port</button>	
+					<button type="button" class="btn btn-primary" id="gen" onclick="gen()">generate a link</button>
+					<p id="status"></p>
+					<p id="key"></p>
+				</div>
+			</nav>
+
+			<br><br><br><br><br><br>
+			<br><br><br><br><br><br>
+			<div class="col-xs-4">
+			<nav>			
+				<p id ="yourMessage"></p>
+				
+				<h4>Your input</h4>
+			<div class="form-group">
+				<label for="comment">Comment:</label>
+				<textarea class="form-control" rows="10" id="comment" style="padding 10px;"></textarea>
+				</div>
+				<button type="button" class="btn btn-primary"onclick="send()">Send</button>
+			</div>
+			</nav></div>
+						</section>
+
+	</body>
+</html>
